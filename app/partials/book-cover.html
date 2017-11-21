@@ -1,0 +1,6 @@
+<a href="https://www.amazon.com/gp/product/{{book.isbn}}" target="_new">
+	<img class="mr-3 mt-3" width="100%" ng-src="https://images-na.ssl-images-amazon.com/images/P/{{book.isbn}}.01.ZTZZZZZZjpg" alt="{{book.title}}">
+</a>
+<p class="text-center">
+	<span class="oi text-warning" data-glyph="star" ng-show="book.rating" ng-repeat="n in [].constructor(book.rating) track by $index"></span>
+</p>

@@ -1,0 +1,23 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">Reading List</h1>
+    <p class="lead">This is an Angular JS example</p>
+  </div>
+</div>
+<div ng-controller="ReadingListController as rlc">
+	<button type="button" class="btn {{ReviewFormCtrl.showForm ? 'btn-dark' : 'btn-light'}} float-right" ng-click="ReviewFormCtrl.showForm = !ReviewFormCtrl.showForm">{{ReviewFormCtrl.showForm ? "Cancel" : "Create Review"}}</button>
+	<div class="clearfix"></div>
+	<review-form books="rlc.books" genres="rlc.genres" ng-show="ReviewFormCtrl.showForm == true"></review-form>
+	<hr/>
+	<ul class="list-unstyled">
+		<li class="row" ng-repeat="book in rlc.books">
+			<div class="col-sm-2">
+				<book-cover book="book"></book-cover>
+			</div>
+			<div class="col-sm-6">
+				<book-info book="book"></book-info>
+				<book-genres genres="book.genres"></book-genres>
+			</div>
+		</li>
+	</ul>
+</div>
